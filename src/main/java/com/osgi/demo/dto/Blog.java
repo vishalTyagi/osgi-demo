@@ -1,0 +1,83 @@
+package com.osgi.demo.dto;
+
+import org.apache.sling.api.resource.ValueMap;
+
+
+/**
+ * Created by vishal on 20/11/17.
+ */
+public class Blog {
+
+	private String title;
+	private String author;
+	private String publishOn;
+	private String description;
+	private String tags;
+	private String blogPath;
+
+	public Blog() {
+		super();
+	}
+
+	public Blog(ValueMap valueMap) {
+		this.title = (String) valueMap.get("title");
+		this.author = (String) valueMap.get("author");
+		this.publishOn = (String) valueMap.get("publishOn");
+		this.tags = (String) valueMap.get("tags");
+		this.description = (String) valueMap.get("description");
+//		this.blogPath = (String) valueMap.get("path");
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getBlogPath() {
+		return this.blogPath;
+	}
+
+	public void setBlogPath(String path) {
+		this.blogPath = path;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getPublishOn() {
+		return publishOn;
+	}
+
+	public void setPublishOn(String publishOn) {
+		this.publishOn = publishOn;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
+	@Override public String toString() {
+		return "{" + "title:'" + title + '\'' + ", author:'" + author + '\'' + ", publishOn:'" + publishOn + '\'' + ", description:'" + description + '\'' + ", tags:'" + tags
+				+ '\'' + '}';
+	}
+}
