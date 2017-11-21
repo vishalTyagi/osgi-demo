@@ -2,6 +2,11 @@ package com.osgi.demo.dto;
 
 import org.apache.sling.api.resource.ValueMap;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  * Created by vishal on 20/11/17.
@@ -25,7 +30,7 @@ public class Blog {
 		this.publishOn = (String) valueMap.get("publishOn");
 		this.tags = (String) valueMap.get("tags");
 		this.description = (String) valueMap.get("description");
-//		this.blogPath = (String) valueMap.get("path");
+		//		this.blogPath = (String) valueMap.get("path");
 	}
 
 	public String getTitle() {
@@ -56,6 +61,16 @@ public class Blog {
 		return publishOn;
 	}
 
+	public Date getPublishedDate() {
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		try {
+			return (this.publishOn != null) ? df.parse(this.publishOn) : new Date();
+		} catch (ParseException e) {
+			e.printStackTrace();
+			return new Date();
+		}
+	}
+
 	public void setPublishOn(String publishOn) {
 		this.publishOn = publishOn;
 	}
@@ -78,6 +93,6 @@ public class Blog {
 
 	@Override public String toString() {
 		return "{" + "title:'" + title + '\'' + ", author:'" + author + '\'' + ", publishOn:'" + publishOn + '\'' + ", description:'" + description + '\'' + ", tags:'" + tags
-				+ '\'' + '}';
+				+ '\'' + ", blogPath:'" + blogPath + '\'' + '}';
 	}
 }
