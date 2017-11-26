@@ -17,7 +17,7 @@ public class Blog {
 	private String author;
 	private String publishOn;
 	private String description;
-	private String tags;
+	private String[] tags;
 	private String blogPath;
 
 	public Blog() {
@@ -28,7 +28,7 @@ public class Blog {
 		this.title = (String) valueMap.get("title");
 		this.author = (String) valueMap.get("author");
 		this.publishOn = (String) valueMap.get("publishOn");
-		this.tags = (String) valueMap.get("tags");
+		this.tags = (String[]) valueMap.get("tags");
 		this.description = (String) valueMap.get("description");
 		//		this.blogPath = (String) valueMap.get("path");
 	}
@@ -83,11 +83,11 @@ public class Blog {
 		this.description = description;
 	}
 
-	public String getTags() {
+	public String[] getTags() {
 		return tags;
 	}
 
-	public void setTags(String tags) {
+	public void setTags(String[] tags) {
 		this.tags = tags;
 	}
 

@@ -1,7 +1,7 @@
 package com.osgi.demo.servlet;
 
-import com.osgi.demo.interfaces.BlogServiceInterface;
 import com.osgi.demo.dto.Blog;
+import com.osgi.demo.interfaces.BlogServiceInterface;
 import org.apache.felix.scr.annotations.Reference;
 import org.apache.felix.scr.annotations.sling.SlingServlet;
 import org.apache.sling.api.SlingHttpServletRequest;

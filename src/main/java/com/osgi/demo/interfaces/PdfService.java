@@ -5,5 +5,5 @@ package com.osgi.demo.interfaces;
  */
 public interface PdfService {
 
-	public void createPdf(String value);
+	public String createPDF(String filename,String value);
 }
